@@ -1,0 +1,118 @@
+
+/* General styling */
+body {
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    background-color: #fef3bd;
+    text-align: center;
+    color: #333;
+    padding: 20px;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5em;
+    color: #ff6f61;
+    text-shadow: 2px 2px 4px #333;
+    margin-bottom: 20px;
+}
+
+/* Bingo card grid */
+.bingo-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Bingo cell styling */
+.bingo-cell {
+    background-color: #fff;
+    border-radius: 10px;
+    border: 4px solid #ff6f61;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.bingo-cell:hover {
+    background-color: #ffde7d;
+    transform: scale(1.05);
+}
+
+.bingo-cell.active {
+    background-color: #ff6f61;
+    color: #fff;
+}
+
+/* Button styling */
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f94144;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #f3722c;
+}
+
+button:active {
+    background-color: #ff6f61;
+    box-shadow: none;
+}
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .bingo-card {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    .bingo-cell {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .bingo-card {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .bingo-cell {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
