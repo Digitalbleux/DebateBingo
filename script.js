@@ -27,7 +27,7 @@ const phrases = [
 function generateCard() {
     const bingoCard = document.getElementById('bingoCard');
     bingoCard.innerHTML = ''; // Clear the card
-    let selectedPhrases = getRandomPhrases(25); // Get exactly 25 random phrases
+    let selectedPhrases = getRandomUniquePhrases(25); // Get exactly 25 unique random phrases
 
     selectedPhrases.forEach((phrase, index) => {
         let cell = document.createElement('div');
@@ -50,10 +50,10 @@ function clearCard() {
     });
 }
 
-// Helper function to get random phrases (limit to 25)
-function getRandomPhrases(num) {
+// Helper function to get 25 unique random phrases
+function getRandomUniquePhrases(num) {
     let shuffled = phrases.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num); // Always return exactly 25 items
+    return Array.from(new Set(shuffled.slice(0, num))); // Ensure uniqueness by using a Set
 }
 
 // Generate an initial card when the page loads
