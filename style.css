@@ -5,11 +5,12 @@
     grid-template-columns: repeat(5, 1fr); /* 5 columns */
     grid-template-rows: repeat(5, 1fr); /* 5 rows */
     gap: 10px;
-    max-width: 100%;
+    width: 100%; /* Ensure the card uses full width */
+    max-width: 800px; /* Optional max width to fit mobile and desktop */
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent grid overflow */
+    overflow: hidden; /* Prevent overflow */
 }
 
 /* Bingo cell styling */
@@ -25,6 +26,19 @@
     text-align: center;
     word-wrap: break-word; /* Force word wrap */
     overflow-wrap: break-word; /* Support for older browsers */
+}
+
+/* Color change when a square is clicked (active) */
+.bingo-cell.active {
+    background-color: #ff6f61; /* Change background color when selected */
+    color: #fff; /* Change text color to white */
+    border-color: #e84118; /* Darker border when selected */
+}
+
+/* Hover state for feedback */
+.bingo-cell:hover {
+    background-color: #ffde7d; /* Lighter background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 /* Mobile responsiveness */
